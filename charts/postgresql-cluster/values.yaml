@@ -1,0 +1,46 @@
+# Default values for postgresql-cluster.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+numberOfInstances: 1
+
+volume:
+  size: 10Gi
+
+labels: {}
+
+annotations: {}
+
+users:
+  {}
+  # database owner
+  # zalando:
+  # - superuser
+  # - createdb
+
+  # role for application foo
+  # foo_user: # or 'foo_user: []'
+
+databases:
+  {}
+  # databases: name->owner
+  # foo: zalando
+
+postgresql:
+  version: "16"
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 100Mi
+  requests:
+    cpu: 500m
+    memory: 500Mi
+
+tolerations: []
+
+nodeAffinity: {}
+
+initContainers: []
+
+sidecars: []
