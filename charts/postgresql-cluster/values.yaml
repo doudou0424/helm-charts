@@ -11,8 +11,7 @@ labels: {}
 
 annotations: {}
 
-users:
-  {}
+users: {}
   # database owner
   # zalando:
   # - superuser
@@ -21,8 +20,7 @@ users:
   # role for application foo
   # foo_user: # or 'foo_user: []'
 
-databases:
-  {}
+databases: {}
   # databases: name->owner
   # foo: zalando
 
