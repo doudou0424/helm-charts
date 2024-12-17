@@ -11,6 +11,8 @@ labels: {}
 
 annotations: {}
 
+allowedSourceRanges: []
+
 users: {}
   # database owner
   # zalando:

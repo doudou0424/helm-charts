@@ -14,14 +14,17 @@ metadata:
   name: {{ include "postgresql-cluster.fullname" . }}
   namespace: {{ .Release.Namespace }}
 spec:
-  allowedSourceRanges: null
+  {{- if .Values.allowedSourceRanges }}
+  allowedSourceRanges:
+    {{- toYaml.Values.allowedSourceRanges | nindent 4 }}
+  {{- end }}
   {{- if .Values.databases }}
   databases:
     {{- toYaml .Values.databases | nindent 4 }}
   {{- end }}
   numberOfInstances: {{ .Values.numberOfInstances }}
   postgresql:
-    version: {{ .Values.postgresql.version | toString }}
+    version: {{ .Values.postgresql.version | quote }}
   resources:
     {{- toYaml .Values.resources | nindent 4 }}
   teamId: acid
