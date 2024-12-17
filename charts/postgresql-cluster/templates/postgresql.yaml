@@ -3,11 +3,11 @@ kind: postgresql
 metadata:
   labels:
     {{- include "postgresql-cluster.labels" . | nindent 4 }}
-    {{- with .Values.labels }}
+    {{- if .Values.labels }}
     {{- toYaml .Values.labels | nindent 4 }}
     {{- end }}
     team: acid
-  {{- with .Values.annotations}}
+  {{- if .Values.annotations}}
   annotations:
     {{- toYaml .Values.annotations | nindent 4 }}
   {{- end }}
@@ -15,7 +15,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   allowedSourceRanges: null
-  {{- with .Values.databases }}
+  {{- if .Values.databases }}
   databases:
     {{- toYaml .Values.databases | nindent 4 }}
   {{- end }}
@@ -25,25 +25,25 @@ spec:
   resources:
     {{- toYaml .Values.resources | nindent 4 }}
   teamId: acid
-  {{- with .Values.users }}
+  {{- if .Values.users }}
   users:
     {{- toYaml .Values.users | nindent 4 }}
   {{- end }}
   volume:
     size: {{ .Values.volume.size }}
-  {{- with .Values.tolerations }}
+  {{- if .Values.tolerations }}
   tolerations:
     {{- toYaml .Values.tolerations | nindent 4 }}
   {{- end }}
-  {{- with.Values.nodeAffinity }}
+  {{- if.Values.nodeAffinity }}
   nodeAffinity:
     {{- toYaml .Values.nodeAffinity | nindent 4 }}
   {{- end }}
-  {{- with .Values.initContainers }}
+  {{- if .Values.initContainers }}
   initContainers:
     {{- toYaml .Values.initContainers | nindent 4 }}
   {{- end }}
-  {{- with .Values.sidecars }}
+  {{- if .Values.sidecars }}
   sidecars:
     {{- toYaml .Values.sidecars | nindent 4 }}
   {{- end }}
