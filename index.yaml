@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  postgresql-cluster:
+  - apiVersion: v2
+    created: "2024-12-17T02:58:22.102878068Z"
+    description: A Helm chart for postgresql cluster
+    digest: b5c6d1ddda67c77773d147ab351611378baa188ad07db6ff06a367baf4ed2f87
+    name: postgresql-cluster
+    type: application
+    urls:
+    - https://github.com/doudou0424/helm-charts/releases/download/postgresql-cluster-0.1.1/postgresql-cluster-0.1.1.tgz
+    version: 0.1.1
+generated: "2024-12-17T02:58:22.102893176Z"
